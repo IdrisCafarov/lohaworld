@@ -1,0 +1,316 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+<!doctype html>
+<html lang="zxx">
+
+
+<head>
+
+    <!--========= Required meta tags =========-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% for general in settings %}
+    <title>{{general.site_title}}</title>
+    {% endfor %}
+
+    <link rel="shortcut icon" href="{% static "assets/img/logo/favicon.png" %}" type="images/x-icon"/>
+
+    <!-- css include -->
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/swiper.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/odometer.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/nice-select.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/jquery-ui.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/main.css" %}">
+</head>
+
+<body>
+
+<!-- backtotop - start -->
+<div class="xb-backtotop">
+    <a href="#" class="scroll">
+        <i class="far fa-arrow-up"></i>
+    </a>
+</div>
+<!-- backtotop - end -->
+
+<!-- preloader start -->
+<div id="xb-loadding">
+    <div class="loader">
+        <div class="plane">
+            <img class="plane-img" src="{% static "assets/img/icon/plane.gif" %}" alt="">
+        </div>
+        <div class="earth-wrapper">
+            <div class="earth"></div>
+        </div>
+    </div>
+</div>
+<!-- preloader end -->
+
+<div class="body_wrap">
+
+    <!-- header start -->
+    <header class="site-header header-style-one">
+        <div class="header__top-wrap gray-bg">
+            <div class="container">
+                {% for general in settings %}
+                <div class="header__top ul_li_between">
+                    <div class="header__top-cta">
+                        <img src="{% static "assets/img/icon/n_pad.svg" %}" alt=""><span>Əlaqə Nömrəsi :</span> {{general.number}}
+                    </div>
+                    <ul class="header__top-info ul_li">
+                        <li><img src="assets/img/icon/time.svg" alt="">{{general.working_hours}}</li>
+                        <li><img src="assets/img/icon/location.svg" alt="">{{general.adress}}</li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="header__wrap stricky">
+            <div class="container">
+                <div class="header__inner ul_li_between">
+                    <div class="header__logo">
+                        <a href="{% url "index" %}"><img style="width:117px;height:68px;object-cover:fit;" src="{% static "assets/img/logo/logo.png" %}" alt=""></a>
+                    </div>
+                    <div class="main-menu__wrap ul_li navbar navbar-expand-lg">
+                        <nav class="main-menu collapse navbar-collapse">
+                            <ul>
+                                <li {% if request.resolver_match.url_name == 'index' %}class="active"{% endif %}><a href="{% url "index" %}"><span>Home</span></a>
+                                    
+                                </li>
+                                
+                                <li {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}><a href="{% url "about" %}"><span>About us</span></a></li>
+                                
+                                <li {% if request.resolver_match.url_name == 'blogs' %}class="active"{% endif %}>
+                                    <a href="{% url "blogs" %}"><span>Blog</span></a>
+                                    
+                                </li>
+                                <li {% if request.resolver_match.url_name == 'contact-us' %}class="active"{% endif %}><a href="{% url "contact-us" %}"><span>Contact</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="xb-hamburger-menu">
+                        <div class="xb-nav-mobile">
+                            <div class="xb-nav-mobile-button"><i class="fal fa-bars"></i></div>
+                        </div>
+                    </div>
+                    <ul class="header__action ul_li">
+                        {% comment %} <li>
+                            <a class="header__search header-search-btn" href="javascript:void(0);">
+                                <img src="{% static "assets/img/icon/search.svg" %}" alt="">Search
+                            </a>
+                        </li> {% endcomment %}
+                        <li>
+                            <div class="header__language">
+                                <ul>
+                                    <li><a href="#!" class="lang-btn">
+                                        {% if LANGUAGE_CODE == 'en' %}
+                                        <div class="flag"><img src="{% static "assets/img/icon/us_flag.png" %}" alt=""></div>
+                                        English
+                                        {% endif %}
+                                        {% if LANGUAGE_CODE == 'az' %}
+                                        <div class="flag"><img src="{% static "assets/img/icon/azerbaijan.png" %}" alt=""></div>
+                                        Azərbaycan
+                                        {% endif %}
+                                        {% if LANGUAGE_CODE == 'ru' %}
+                                        <div class="flag"><img src="{% static "assets/img/icon/russia.png" %}" alt=""></div>
+                                        Русский
+                                        {% endif %}
+                                        
+                                        <div class="arrow_down"><img src="{% static "assets/img/icon/arrow_down.svg" %}" alt=""></div>
+                                    </a>
+                                        <ul class="lang_sub_list">
+                                            {% for lang in LANGUAGES %}
+                                            <li><a href="/{{ lang.0 }}/{{ request.get_full_path|slice:"4:" }}">{{ lang.0 }}</a></li>
+                                            
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="xb-header-wrap">
+            <div class="xb-header-menu">
+                <div class="xb-header-menu-scroll">
+                    <div class="xb-menu-close xb-hide-xl xb-close"></div>
+                    <div class="xb-logo-mobile xb-hide-xl">
+                        <a href="{% url "index" %}" rel="home"><img style="width:117px;height:68px;object-cover:fit;" src="{% static "assets/img/logo/logo.png" %}" alt=""></a></div>
+                    {% comment %} <div class="xb-header-mobile-search xb-hide-xl">
+                        <form role="search" action="#">
+                            <input type="text" placeholder="Search..." name="s" class="search-field">
+                            <button type="submit" class="search-submit">
+                            </button>
+                        </form>
+                    </div> {% endcomment %}
+                    <nav class="xb-header-nav">
+                        <ul class="xb-menu-primary clearfix">
+                            <li  class="menu-item ">
+                                <a href="{% url "index" %}"><span>Home</span></a>
+                                
+                            </li>
+                            
+                            <li class="menu-item"><a href="{% url "about" %}"><span>About us</span></a></li>
+                            
+                            <li class="menu-item">
+                                <a href="{% url "blogs" %}"><span>Blog</span></a>
+                               
+                            </li>
+                            <li class="menu-item"><a href="{% url "contact-us" %}"><span>Contact</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="xb-header-menu-backdrop"></div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- header search start -->
+    {% comment %} <div class="header-search-form-wrapper">
+        <div class="xb-search-close xb-close"></div>
+        <div class="header-search-container">
+            <form role="search" class="search-form" action="#">
+                <input type="search" class="search-field" placeholder="Search …" value="" name="s">
+            </form>
+        </div>
+    </div> {% endcomment %}
+
+
+    <div class="body-overlay"></div>
+
+
+
+    {% block body %}{% endblock body %}
+
+
+
+
+     <!-- footer start -->
+     <footer class="site-footer gray-bg pt-65">
+        <div class="container">
+            <div class="row mt-none-30 pb-60">
+                <div class="col-lg-3 mt-30 col-md-6 footer__custom-col">
+                    <div class="footer__widget">
+                        <h3 class="widget-title">Do you have questions or went more information? Contact us now</h3>
+                        <ul class="footer__cta list-unstyled mt-50">
+                            {% for general in settings %}
+                            <li class="ul_li"><span><img src="{% static "assets/img/icon/f_call.svg" %}" alt=""></span>{{general.number}}
+                            </li>
+                            <li class="ul_li"><span><img src="{% static "assets/img/icon/f_mail.svg" %}" alt=""></span>{{general.email}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-30 col-md-6 footer__custom-col">
+                    <div class="footer__widget">
+                        <h3 class="widget-title">Explore Link</h3>
+                        <ul class="footer__links list-unstyled">
+                            <li><a href="{% url "about" %}"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                    <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
+                                          fill="#B1B4BA"/>
+                                    </svg></span>About Us</a></li>
+                            <li><a href="{% url "blogs" %}"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                    <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
+                                          fill="#B1B4BA"/>
+                                    </svg></span>Blog</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-30 col-md-6 footer__custom-col">
+                    <div class="footer__widget">
+                        <h3 class="widget-title">Services</h3>
+                        <ul class="footer__links list-unstyled">
+                            <li><a href="{% url "contact-us" %}"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                    <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
+                                          fill="#B1B4BA"/>
+                                    </svg></span>Contact</a></li>
+                            {% comment %} <li><a href=""><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13" fill="none">
+                                    <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
+                                          fill="#B1B4BA"/>
+                                    </svg></span>Commercial Visa</a></li> {% endcomment %}
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer__copyright ul_li_between">
+                <div class="footer__copyright-text mt-15">
+                    Copyright © 2023 Aloha World All rights reserved.
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <!-- footer start -->
+
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#contact-form').on('submit', function (e) {
+            e.preventDefault();  // Prevent the default form submission
+
+            $.ajax({
+                url: window.location.href,  // Post the form to the current page URL
+                type: 'POST',
+                data: $('#contact-form').serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    // Clear the message container
+                    $('#message-container').empty();
+
+                    // Display the success message as an alert
+                    if (data.message) {
+                        var alertMessage = '<div class="alert alert-success alert-dismissible show flex items-center mb-2" role="alert"> <i data-lucide="alert-triangle" class="w-6 h-6 mr-2"></i>' +
+                            data.message +
+                            '</div>';
+                        $('#message-container').append(alertMessage);
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<!-- jquery include -->
+<script src="{% static "assets/js/jquery-3.7.1.min.js" %}"></script>
+<script src="{% static "assets/js/bootstrap.bundle.min.js" %}"></script>
+<script src="{% static "assets/js/swiper.min.js" %}"></script>
+<script src="{% static "assets/js/wow.min.js" %}"></script>
+<script src="{% static "assets/js/appear.js" %}"></script>
+<script src="{% static "assets/js/odometer.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.nice-select.min.js" %}"></script>
+<script src="{% static "assets/js/imagesloaded.pkgd.min.js" %}"></script>
+<script src="{% static "assets/js/isotope.pkgd.min.js" %}"></script>
+<script src="{% static "assets/js/jquery.magnific-popup.min.js" %}"></script>
+<script src="{% static "assets/js/jquery-ui.min.js" %}"></script>
+<script src="{% static "assets/js/parallax-scroll.js" %}"></script>
+<script src="{% static "assets/js/main.js" %}"></script>
+
+</body>
+
+
+</html>
