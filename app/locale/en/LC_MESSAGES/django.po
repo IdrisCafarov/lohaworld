@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-26 05:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/about.html:14 templates/about.html:17 templates/base.html:90
+#: templates/base.html:228
+msgid "Haqqımızda"
+msgstr ""
+
+#: templates/about.html:16 templates/base.html:86 templates/base.html:162
+#: templates/base.html:166 templates/blog.html:18 templates/blog_detail.html:15
+#: templates/contact.html:18 templates/country_detail.html:19
+#: templates/service_detail.html:17
+msgid "Ana Səhifə"
+msgstr "Home"
+
+#: templates/about.html:115
+msgid "Biz kimik?"
+msgstr ""
+
+#: templates/about.html:116
+msgid ""
+"Aloha World xaricdə təhsil şirkəti olaraq dünyanın müxtəlif regionlarında və "
+"ölkələrində təhsil almağınız üçün şərait yaradırıq. Həm bakalavr, həm "
+"magistr təhsili almaq istəyən hər kəs üçün xidmət göstərən şirkətimiz son "
+"ildə gənclərin təhsil prosesinə dəstək olmaq üçün 3000-dən çox ödənişsiz "
+"konsultasiya keçirib. Avropa, Amerika və Asiya ölkələrinə müraciət prosesini "
+"həyata keçirən komandamız son il TOP 10 universitetdən tam təqaüdlü "
+"qəbulları ilə bu il yenidən TOP tələbələrin yolunu gözləyir."
+msgstr ""
+
+#: templates/about.html:134
+msgid ""
+"Peşəkar demişkən komanda rəhbəri 8 beynəlxalq təqaüd qalibi olan Aloha World "
+"tələbələrinə təcrübə zəmanəti ilə gözləntilərinə və göstəricilərinə ən uyğun "
+"təklifləri edir. Şirkətin əsas üstünlükləri tələbələrlə sistemli hesabatlar "
+"aparılması, bütün müraciət prosesində və qəbul prosesində tam dəstəkdir."
+msgstr ""
+
+#: templates/about.html:150
+msgid "Proses haqqında:"
+msgstr ""
+
+#: templates/about.html:151
+msgid ""
+"Sizə bu yolda bələdçi olmağımız üçün öncəliklə ilkin qeydiyyat formunu "
+"doldurursunuz, (ilkin qeydiyyata hyper-link) daha sonra sizinlə konsultasiya "
+"edərək, planlamanı hazırlayaraq prosesə başlayırıq. Dünyaya bizimlə salam "
+"verməyə hazırsan?"
+msgstr ""
+
+#: templates/base.html:67
+msgid "Əlaqə Nömrəsi :"
+msgstr ""
+
+#: templates/base.html:93 templates/base.html:169 templates/base.html:233
+#: templates/blog.html:16 templates/blog.html:19
+msgid "Bloqlar"
+msgstr ""
+
+#: templates/base.html:96 templates/base.html:172 templates/base.html:246
+#: templates/contact.html:16 templates/contact.html:19
+msgid "Əlaqə"
+msgstr ""
+
+#: templates/base.html:209
+msgid ""
+"Xaricdə təhsillə bağlı əlavə sualların var? Elə indi, bizimlə əlaqəyə keç!"
+msgstr ""
+
+#: templates/base.html:222
+msgid "Daha çoxu üçün:"
+msgstr ""
+
+#: templates/base.html:240
+msgid "Servislər"
+msgstr ""
+
+#: templates/base.html:261
+msgid "Müəllif hüquqları qorunur"
+msgstr ""
+
+#: templates/blog.html:63
+msgid "Məqaləni Oxu"
+msgstr ""
+
+#: templates/blog_detail.html:16
+msgid "Bloq"
+msgstr ""
+
+#: templates/contact.html:58
+msgid "E-poçt"
+msgstr ""
+
+#: templates/contact.html:69
+msgid "Əlaqə Nömrəsi"
+msgstr ""
+
+#: templates/contact.html:80
+msgid "Ünvan"
+msgstr ""
+
+#: templates/contact.html:104
+msgid "Bizimlə Əlaqə"
+msgstr ""
+
+#: templates/contact.html:105
+msgid "Elə indi, bizimlə əlaqəyə keç!"
+msgstr ""
+
+#: templates/contact.html:148 templates/index.html:368
+msgid "Göndər"
+msgstr ""
+
+#: templates/country_detail.html:17 templates/country_detail.html:20
+#: templates/index.html:39
+msgid "Ölkələr"
+msgstr ""
+
+#: templates/index.html:14
+msgid "Dünyaya bizimlə salam ver!"
+msgstr ""
+
+#: templates/index.html:15
+msgid "Göstəricinizə uyğun ən yaxşı xarici universitetlərdə təhsil al!"
+msgstr ""
+
+#: templates/index.html:18
+msgid "Xaricdə təhsil"
+msgstr ""
+
+#: templates/index.html:19
+msgid "Mentor dəstəyi"
+msgstr ""
+
+#: templates/index.html:20
+msgid "Ödənişsiz konsultasiya"
+msgstr ""
+
+#: templates/index.html:23
+msgid "Konsultasiya qeydiyyatı"
+msgstr ""
+
+#: templates/index.html:24
+msgid "Ətraflı məlumat"
+msgstr ""
+
+#: templates/index.html:96
+msgid "Servislərimiz"
+msgstr ""
+
+#: templates/index.html:217
+msgid "Rəylər:"
+msgstr ""
+
+#: templates/index.html:218
+msgid "Tələbələrimiz deyir ki…"
+msgstr ""
+
+#: templates/index.html:269
+msgid "Tez-tez verilən suallar"
+msgstr ""
+
+#: templates/index.html:270
+msgid ""
+"Bu bölmədə tələbələrimizin bizə sıx-sıx ünvanladığı sualların cavabını "
+"topladıq. Sizin də suallarınızın cavabı burada ola bilər."
+msgstr ""
+
+#: templates/index.html:314
+msgid "Son yazılan məqalələrə nəzər sal!"
+msgstr ""
+
+#: templates/index.html:334
+msgid "Məqaləni oxu"
+msgstr ""
+
+#: templates/index.html:359
+msgid ""
+"Tədbirlər, layihələr, fürsətlər və təqaüd proqramları haqqında məlumatı ilk "
+"sən al!"
+msgstr ""
+
+#: templates/service_detail.html:18
+msgid "Servis"
+msgstr ""
