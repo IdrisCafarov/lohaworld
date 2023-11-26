@@ -64,7 +64,7 @@
                 {% for general in settings %}
                 <div class="header__top ul_li_between">
                     <div class="header__top-cta">
-                        <img src="{% static "assets/img/icon/n_pad.svg" %}" alt=""><span>Əlaqə Nömrəsi :</span> {{general.number}}
+                        <img src="{% static "assets/img/icon/n_pad.svg" %}" alt=""><span>{% trans "Əlaqə Nömrəsi :" %}</span> {{general.number}}
                     </div>
                     <ul class="header__top-info ul_li">
                         <li><img src="assets/img/icon/time.svg" alt="">{{general.working_hours}}</li>
@@ -83,17 +83,17 @@
                     <div class="main-menu__wrap ul_li navbar navbar-expand-lg">
                         <nav class="main-menu collapse navbar-collapse">
                             <ul>
-                                <li {% if request.resolver_match.url_name == 'index' %}class="active"{% endif %}><a href="{% url "index" %}"><span>Home</span></a>
+                                <li {% if request.resolver_match.url_name == 'index' %}class="active"{% endif %}><a href="{% url "index" %}"><span>{% trans "Ana Səhifə" %}</span></a>
                                     
                                 </li>
                                 
-                                <li {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}><a href="{% url "about" %}"><span>About us</span></a></li>
+                                <li {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}><a href="{% url "about" %}"><span>{% trans "Haqqımızda" %}</span></a></li>
                                 
                                 <li {% if request.resolver_match.url_name == 'blogs' %}class="active"{% endif %}>
-                                    <a href="{% url "blogs" %}"><span>Blog</span></a>
+                                    <a href="{% url "blogs" %}"><span>{% trans "Bloqlar" %}</span></a>
                                     
                                 </li>
-                                <li {% if request.resolver_match.url_name == 'contact-us' %}class="active"{% endif %}><a href="{% url "contact-us" %}"><span>Contact</span></a></li>
+                                <li {% if request.resolver_match.url_name == 'contact-us' %}class="active"{% endif %}><a href="{% url "contact-us" %}"><span>{% trans "Əlaqə" %}</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -157,17 +157,17 @@
                     <nav class="xb-header-nav">
                         <ul class="xb-menu-primary clearfix">
                             <li  class="menu-item ">
-                                <a href="{% url "index" %}"><span>Home</span></a>
+                                <a href="{% url "index" %}"><span>{% trans "Ana Səhifə" %}</span></a>
                                 
                             </li>
                             
-                            <li class="menu-item"><a href="{% url "about" %}"><span>About us</span></a></li>
+                            <li class="menu-item"><a href="{% url "about" %}"><span>{% trans "Ana Səhifə" %}</span></a></li>
                             
                             <li class="menu-item">
-                                <a href="{% url "blogs" %}"><span>Blog</span></a>
+                                <a href="{% url "blogs" %}"><span>{% trans "Bloqlar" %}</span></a>
                                
                             </li>
-                            <li class="menu-item"><a href="{% url "contact-us" %}"><span>Contact</span></a></li>
+                            <li class="menu-item"><a href="{% url "contact-us" %}"><span>{% trans "Əlaqə" %}</span></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -203,7 +203,7 @@
             <div class="row mt-none-30 pb-60">
                 <div class="col-lg-3 mt-30 col-md-6 footer__custom-col">
                     <div class="footer__widget">
-                        <h3 class="widget-title">Do you have questions or went more information? Contact us now</h3>
+                        <h3 class="widget-title">{% trans "Xaricdə təhsillə bağlı əlavə sualların var? Elə indi, bizimlə əlaqəyə keç!" %}</h3>
                         <ul class="footer__cta list-unstyled mt-50">
                             {% for general in settings %}
                             <li class="ul_li"><span><img src="{% static "assets/img/icon/f_call.svg" %}" alt=""></span>{{general.number}}
@@ -216,31 +216,31 @@
                 </div>
                 <div class="col-lg-3 mt-30 col-md-6 footer__custom-col">
                     <div class="footer__widget">
-                        <h3 class="widget-title">Explore Link</h3>
+                        <h3 class="widget-title">{% trans "Daha çoxu üçün:" %}</h3>
                         <ul class="footer__links list-unstyled">
                             <li><a href="{% url "about" %}"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
                                                         viewBox="0 0 13 13" fill="none">
                                     <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
                                           fill="#B1B4BA"/>
-                                    </svg></span>About Us</a></li>
+                                    </svg></span>{% trans "Haqqımızda" %}</a></li>
                             <li><a href="{% url "blogs" %}"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
                                                         viewBox="0 0 13 13" fill="none">
                                     <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
                                           fill="#B1B4BA"/>
-                                    </svg></span>Blog</a></li>
+                                    </svg></span>{% trans "Bloqlar" %}</a></li>
                            
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 mt-30 col-md-6 footer__custom-col">
                     <div class="footer__widget">
-                        <h3 class="widget-title">Services</h3>
+                        <h3 class="widget-title">{% trans "Servislər" %}</h3>
                         <ul class="footer__links list-unstyled">
                             <li><a href="{% url "contact-us" %}"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
                                                         viewBox="0 0 13 13" fill="none">
                                     <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
                                           fill="#B1B4BA"/>
-                                    </svg></span>Contact</a></li>
+                                    </svg></span>{% trans "Əlaqə" %}</a></li>
                             {% comment %} <li><a href=""><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
                                                         viewBox="0 0 13 13" fill="none">
                                     <path d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
@@ -254,7 +254,7 @@
             </div>
             <div class="footer__copyright ul_li_between">
                 <div class="footer__copyright-text mt-15">
-                    Copyright © 2023 Aloha World All rights reserved.
+                    Copyright © 2023 Aloha World {% trans "Müəllif hüquqları qorunur" %}.
                 </div>
                 
             </div>

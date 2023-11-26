@@ -141,7 +141,7 @@ def blog(request):
     blogs = Blog.objects.all()
 
     page = request.GET.get('page')
-    paginator = Paginator(blogs, 2)
+    paginator = Paginator(blogs, 4)
     
     try:
         blogs=paginator.page(page)

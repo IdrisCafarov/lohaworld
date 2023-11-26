@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
-
+{% load i18n %}
 {% block body %}
     <main>
 
@@ -11,18 +11,17 @@
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-7">
                         <div class="hero__content">
-                            <h1 class="wow skewIn">Immigration visa <br> <span>Consulting</span></h1>
-                            <p class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration=".6s">Expert Guidance for a
-                                Seamless Immigration Journey</p>
+                            <h1 class="wow skewIn">{% trans "Dünyaya bizimlə salam ver!" %}</span></h1>
+                            <p class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration=".6s">{% trans "Göstəricinizə uyğun ən yaxşı xarici universitetlərdə təhsil al!" %}</p>
                             <ul class="xb-list list-unstyled mt-40 mb-60 wow fadeInUp" data-wow-delay="400ms"
                                 data-wow-duration=".6s">
-                                <li><i class="far fa-check"></i>Expert Legal Support</li>
-                                <li><i class="far fa-check"></i>Meeting Your Unique Needs</li>
-                                <li><i class="far fa-check"></i>Tailored Immigration Solutions</li>
+                                <li><i class="far fa-check"></i>{% trans "Xaricdə təhsil" %}</li>
+                                <li><i class="far fa-check"></i>{% trans "Mentor dəstəyi" %}</li>
+                                <li><i class="far fa-check"></i>{% trans "Ödənişsiz konsultasiya" %}</li>
                             </ul>
                             <div class="btns wow fadeInUp" data-wow-delay="600ms" data-wow-duration=".6s">
-                                <a class="thm-btn" href="{% url "contact-us" %}">Book Appointment</a>
-                                <a class="thm-btn thm-btn--white" href="{% url "about" %}">Read Story</a>
+                                <a class="thm-btn" href="{% url "contact-us" %}">{% trans "Konsultasiya qeydiyyatı" %}</a>
+                                <a class="thm-btn thm-btn--white" href="{% url "about" %}">{% trans "Ətraflı məlumat" %}</a>
                             </div>
                         </div>
                     </div>
@@ -37,15 +36,15 @@
             <div class="row mb-30 align-items-center">
                 <div class="col-lg-6">
                     <div class="sec-title">
-                        <h2 class="mb-20 wow skewIn">Make Your Choice for the <br> <span>Preferred Nation</span>
+                        <h2 class="mb-20 wow skewIn">{% trans "Ölkələr" %}
                         </h2>
                     </div>
                 </div>
-                <div class="col-lg-5 offset-lg-1">
+                {% comment %} <div class="col-lg-5 offset-lg-1">
                     <div class="sec-title mb-20">
                         <p>Choosing the ideal destination for immigration is a pivotal decision that can shape the trajectory of your </p>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
             <ul class="xb-country-nav nav nav-tabs ul_li_between mb-65" id="myTab" role="tablist">
                 {% for category in categories %}
@@ -93,7 +92,7 @@
                              data-background="{% static "assets/img/service/img_01.jpg" %}"></div>
                     </div>
                     <div class="sec-title wow skewIn pt-120">
-                        <h2 class="mb-60">Visa types and eligibility <br> <span>assessment</span></h2>
+                        <h2 class="mb-60">{% trans "Servislərimiz" %}</h2>
                     </div>
                     <div class="row justify-content-md-center mt-none-30">
                         {% for service in services|slice:":2" %}
@@ -107,8 +106,7 @@
                                         <h3 class="xb-item--title mb-20"><a href="{{service.get_absolute_url}}">{{service.name}}</a>
                                         </h3>
                                         <div class="xb-item--description">
-                                            Embarking on a journey of higher education in a foreign country opens doors
-                                            to...
+                                            {{service.short_intro}}
                                         </div>
                                     </div>
                                 </div>
@@ -128,8 +126,7 @@
                                         <h3 class="xb-item--title mb-20"><a href="{{service.get_absolute_url}}">{{service.name}}</a>
                                         </h3>
                                         <div class="xb-item--description">
-                                            Embarking on a journey of higher education in a foreign country opens doors
-                                            to...
+                                            {{service.short_intro}}
                                         </div>
                                     </div>
                                 </div>
@@ -216,10 +213,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4">
                         <div class="sec-title margin-none-md mb-30-xs mb-125">
-                            <h2 class="mb-70 wow skewIn">Happy Clients Reflect on Their <br>
-                                <span> Journey with Us</span></h2>
-                            <p>Embark on a Global Exploration: <br> Experience Joy in 190+ Countries <br> and Across the
-                                World</p>
+                            <h2 class="mb-70 wow skewIn">{% trans "Rəylər:" %}</h2>
+                            <p>{% trans "Tələbələrimiz deyir ki…" %}</p>
                         </div>
                         <div class="xb-testimonial__nav ul_li">
                             <div class="tm-nav-item tm-button-prev"></div>
@@ -235,9 +230,9 @@
                                         <div class="swiper-slide xb-swiper-slide">
                                             <div class="xb-testimonial">
                                                 <div class="xb-item--inner text-center">
-                                                    <div class="xb-item--img">
+                                                    {% comment %} <div class="xb-item--img">
                                                         <img src="{% static "assets/img/icon/trustpilot.png" %}" alt="">
-                                                    </div>
+                                                    </div> {% endcomment %}
                                                     <div style="height:550px;" class="xb-item--content">
                                                         "{{testimonial.text}}"
                                                     </div>
@@ -269,9 +264,8 @@
                     <div class="col-lg-5">
                         <div class="xb-faq-content">
                             <div class="sec-title mb-125">
-                                <h2 class="mb-30 wow skewIn">Common questions <br> <span> answered</span></h2>
-                                <p>At the heart of our commitment to providing <br> exceptional immigration solutions
-                                    stands our trusted</p>
+                                <h2 class="mb-30 wow skewIn">{% trans "Tez-tez verilən suallar" %}</h2>
+                                <p>{% trans "Bu bölmədə tələbələrimizin bizə sıx-sıx ünvanladığı sualların cavabını topladıq. Sizin də suallarınızın cavabı burada ola bilər." %}</p>
                             </div>
                             <div class="faq-img">
                                 <img src="{% static "assets/img/faq/faq_img.png" %}" alt="">
@@ -314,8 +308,8 @@
             <div class="container">
                 <div class="blog-wrap">
                     <div class="sec-title mb-60 text-center">
-                        <h2 class="mb-30 wow skewIn">Cast Your Eyes Upon Our <br> <span> Newest Article</span></h2>
-                        <p>Explore the most recent addition to our informative articles</p>
+                        <h2 class="mb-30 wow skewIn">{% trans "Son yazılan məqalələrə nəzər sal!" %}</h2>
+                        {% comment %} <p>Explore the most recent addition to our informative articles</p> {% endcomment %}
                     </div>
                     <div class="row justify-content-md-center mt-none-30">
                         {% for blog in blogs|slice:":3" %}
@@ -328,11 +322,11 @@
                                     <div style="height:250px;" class="xb-item--holder">
                                         {% comment %} <span class="xb-item--category">Consulting</span> {% endcomment %}
                                         <ul class="xb-item--meta ul_li mb-20">
-                                            <li><img src="{% static "assets/img/icon/user.svg" %}" alt="">By admin</li>
+                                            <li><img src="{% static "assets/img/icon/user.svg" %}" alt="">Admin</li>
                                             <li><img src="{% static "assets/img/icon/calendar.svg" %}" alt="">{{blog.date}}</li>
                                         </ul>
                                         <h3 class="xb-item--title border-effect"><a href="blog-single.html">{{blog.name|slice:":44"}}..</a></h3>
-                                        <a class="xb-item--link" href="{{blog.get_absolute_url}}">Read the article<span><img
+                                        <a class="xb-item--link" href="{{blog.get_absolute_url}}">{% trans "Məqaləni oxu" %}<span><img
                                                 src="{% static "assets/img/icon/right_arrow.svg" %}" alt=""></span></a>
                                     </div>
                                     <a class="xb-overlay xb-overlay-link" href="{{blog.get_absolute_url}}"></a>
@@ -355,8 +349,8 @@
                         <div class="col-lg-7">
                             <div class="xb-item--inner">
                                 <div class="xb-item--holder mb-30">
-                                    <span>newsletter</span>
-                                    <h3>Subscribe to the free newsletter to receive the latest <br> news & case studies!
+                                    {% comment %} <span>xəbərlər</span> {% endcomment %}
+                                    <h3>{% trans "Tədbirlər, layihələr, fürsətlər və təqaüd proqramları haqqında məlumatı ilk sən al!" %}
                                     </h3>
                                 </div>
                                 <div id="message-container">
@@ -365,7 +359,7 @@
                                 <form id="contact-form" class="xb-item--form" method="post">
                                     {% csrf_token %}
                                     {{form.email|as_crispy_field}}
-                                    <button type="submit" class="thm-btn">Subscribe</button>
+                                    <button type="submit" class="thm-btn">{% trans "Göndər" %}</button>
                                 </form>
                             </div>
                         </div>

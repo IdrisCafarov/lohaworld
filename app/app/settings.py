@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     # installed apps
     'crispy_forms',
     'crispy_bootstrap5',
-    'ckeditor', 
+    'ckeditor',
+    'modeltranslation',
     # custom apps
     'blog',
     'core',

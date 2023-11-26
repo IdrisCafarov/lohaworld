@@ -1,5 +1,7 @@
 from django import forms
 from .models import *
+from django.utils.translation import gettext as _
+from django.utils.translation import ugettext_lazy as _lazy
 
 
 
@@ -10,7 +12,7 @@ class CreateEmailForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(
         attrs={
         'type':'text',
-        'placeholder':'Your Email'
+        'placeholder':_lazy('E-poçt')
         }
     ))
 
@@ -34,28 +36,28 @@ class CreateContactForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(
         attrs={
         'type':'text',
-        'placeholder':'Your Email'
+        'placeholder':_lazy('E-poçt')
         }
     ))
 
     name = forms.CharField(widget=forms.TextInput(
         attrs={
         'type':'text',
-        'placeholder':'Your Name'
+        'placeholder':_lazy('Adınız')
         }
     ))
 
     number = forms.CharField(widget=forms.TextInput(
         attrs={
         'type':'text',
-        'placeholder':'Your Phone Number'
+        'placeholder':_lazy('Əlaqə Nömrəniz')
         }
     ))
 
     text = forms.CharField(widget=forms.Textarea(
         attrs={
         'type':'text',
-        'placeholder':'Your Message'
+        'placeholder':_lazy('Mesajınız')
         }
     ))
 
