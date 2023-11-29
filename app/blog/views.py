@@ -158,3 +158,50 @@ def blog(request):
 
 
     return render(request,"blog.html",context)
+
+
+
+def events(request):
+
+    context={}
+    events = Event.objects.all()
+
+    context["events"] = events
+
+    return render(request,"events.html",context)
+
+
+
+def event_detail(request,slug):
+
+    context = {}
+
+    event = get_object_or_404(Event,slug=slug)
+    events = Event.objects.all()
+
+    context["event"] = event
+    context["events"] = events
+
+
+    return render(request,"event_detail.html",context)
+
+
+def students(request):
+    context = {}
+
+    students = Student.objects.all()
+
+    context["students"] = students
+
+    return render(request,"students.html",context)
+
+
+def student_detail(request,slug):
+    context = {}
+
+    student = get_object_or_404(Student,slug=slug)
+
+    context["student"] = student
+
+    return render(request,"student_detail.html",context)
+

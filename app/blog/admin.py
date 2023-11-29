@@ -25,4 +25,19 @@ admin.site.register(Testimonial)
 admin.site.register(Email)
 admin.site.register(Contact)
 admin.site.register(Team)
-# admin.site.register(Adress)
+admin.site.register(Student)
+
+
+class EventVideoInline(admin.StackedInline):
+    model = Video
+    max_num = 10
+    extra = 1
+
+
+
+@admin.register(Event)
+class AdminGeneralSettings(admin.ModelAdmin):
+    inlines = [EventVideoInline,]
+
+
+    

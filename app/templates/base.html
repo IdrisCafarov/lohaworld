@@ -93,6 +93,19 @@
                                     <a href="{% url "blogs" %}"><span>{% trans "Bloqlar" %}</span></a>
                                     
                                 </li>
+
+
+                                <li {% if request.resolver_match.url_name == 'students' %}class="active"{% endif %}>
+                                    <a href="{% url "students" %}"><span>{% trans "Tələbələr" %}</span></a>
+                                    
+                                </li>
+
+                                <li {% if request.resolver_match.url_name == 'events' %}class="active"{% endif %}>
+                                    <a href="{% url "events" %}"><span>{% trans "Tədbirlər" %}</span></a>
+                                    
+                                </li>
+
+
                                 <li {% if request.resolver_match.url_name == 'contact-us' %}class="active"{% endif %}><a href="{% url "contact-us" %}"><span>{% trans "Əlaqə" %}</span></a></li>
                             </ul>
                         </nav>
@@ -120,10 +133,10 @@
                                         <div class="flag"><img src="{% static "assets/img/icon/azerbaijan.png" %}" alt=""></div>
                                         Azərbaycan
                                         {% endif %}
-                                        {% if LANGUAGE_CODE == 'ru' %}
+                                        {% comment %} {% if LANGUAGE_CODE == 'ru' %}
                                         <div class="flag"><img src="{% static "assets/img/icon/russia.png" %}" alt=""></div>
                                         Русский
-                                        {% endif %}
+                                        {% endif %} {% endcomment %}
                                         
                                         <div class="arrow_down"><img src="{% static "assets/img/icon/arrow_down.svg" %}" alt=""></div>
                                     </a>
@@ -161,12 +174,18 @@
                                 
                             </li>
                             
-                            <li class="menu-item"><a href="{% url "about" %}"><span>{% trans "Ana Səhifə" %}</span></a></li>
+                            <li class="menu-item"><a href="{% url "about" %}"><span>{% trans "Haqqımızda" %}</span></a></li>
                             
                             <li class="menu-item">
                                 <a href="{% url "blogs" %}"><span>{% trans "Bloqlar" %}</span></a>
                                
                             </li>
+
+                            <li class="menu-item">
+                                <a href="{% url "events" %}"><span>{% trans "Tədbirlər" %}</span></a>
+                               
+                            </li>
+
                             <li class="menu-item"><a href="{% url "contact-us" %}"><span>{% trans "Əlaqə" %}</span></a></li>
                         </ul>
                     </nav>

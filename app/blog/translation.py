@@ -66,3 +66,10 @@ translator.register(Team,TeamOptions)
 
 
 
+class StudentOptions(TranslationOptions):
+    fields = ('name','country','major','content',)
+    
+translator.register(Student,StudentOptions)
+
+
+

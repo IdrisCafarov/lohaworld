@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'app.middleware.force_default_middleware.force_default_language_middleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
     
 ]
 
@@ -125,7 +127,7 @@ LANGUAGE_CODE = "az"
 LANGUAGES = (
     ('az','Azərbaycan'),
     ('en','English'),
-    ('ru','Русский')
+    # ('ru','Русский')
 )
 
 LOCALE_PATHS = [
