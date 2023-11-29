@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 14:53+0000\n"
+"POT-Creation-Date: 2023-11-29 15:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: templates/about.html:14 templates/about.html:17 templates/base.html:90
-#: templates/base.html:180 templates/base.html:248
+#: templates/base.html:180 templates/base.html:253
 msgid "Haqqımızda"
 msgstr ""
 
@@ -71,40 +71,40 @@ msgstr ""
 msgid "Əlaqə Nömrəsi :"
 msgstr ""
 
-#: templates/base.html:93 templates/base.html:183 templates/base.html:253
+#: templates/base.html:93 templates/base.html:183 templates/base.html:258
 #: templates/blog.html:16 templates/blog.html:19
 msgid "Bloqlar"
 msgstr ""
 
-#: templates/base.html:99
+#: templates/base.html:99 templates/base.html:188
 msgid "Tələbələr"
 msgstr ""
 
-#: templates/base.html:104 templates/base.html:188
+#: templates/base.html:104 templates/base.html:193
 #: templates/event_detail.html:16 templates/event_detail.html:19
 #: templates/events.html:14 templates/events.html:17
 msgid "Tədbirlər"
 msgstr ""
 
-#: templates/base.html:109 templates/base.html:192 templates/base.html:266
+#: templates/base.html:109 templates/base.html:197 templates/base.html:271
 #: templates/contact.html:16 templates/contact.html:19
 msgid "Əlaqə"
 msgstr ""
 
-#: templates/base.html:229
+#: templates/base.html:234
 msgid ""
 "Xaricdə təhsillə bağlı əlavə sualların var? Elə indi, bizimlə əlaqəyə keç!"
 msgstr ""
 
-#: templates/base.html:242
+#: templates/base.html:247
 msgid "Daha çoxu üçün:"
 msgstr ""
 
-#: templates/base.html:260
+#: templates/base.html:265
 msgid "Servislər"
 msgstr ""
 
-#: templates/base.html:281
+#: templates/base.html:286
 msgid "Müəllif hüquqları qorunur"
 msgstr ""
 
@@ -178,7 +178,7 @@ msgid "Ətraflı məlumat"
 msgstr ""
 
 #: templates/index.html:96
-msgid "Servislərimiz"
+msgid "Xidmətlərimiz"
 msgstr ""
 
 #: templates/index.html:218
